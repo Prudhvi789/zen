@@ -27,7 +27,7 @@ function display(st){
     
     
     var maintable=document.createElement('table');
-    maintable.setAttribute("class","table table-bordered");
+    //maintable.setAttribute("class","table table-bordered");
     var row1=createrow();
     row1.append(createcolumn("","First Name"),createcolumn("",fname));
     var row2=createrow();
@@ -45,22 +45,23 @@ function display(st){
     var row8=createrow();
     row8.append(createcolumn("","Country"),createcolumn("",country));
     maintable.append(row1,row2,row3,row4,row5,row6,row7,row8);
-    maintable.setAttribute("class","table table-condensed");
+    maintable.setAttribute("style","border: 1px solid black;border-collapse: collapse;padding: 10px;text-align:center;margin-left:400px;background-color:#f6f2f2;width:600px");
     document.body.append(maintable);
+    document.getElementById('details').reset();
 }
 
 
 
 function createcolumn(classname="",text=""){
     var col=document.createElement('td');
-    col.setAttribute("class",classname);
+    col.setAttribute("style","border: 1px solid black;border-collapse: collapse;padding: 10px;text-align:center");
     col.innerHTML=text;
     return col;
 }
 
 function createrow(classname="",text=""){
     var row=document.createElement('tr');
-    row.setAttribute("class",classname);
+    row.setAttribute("style","border: 1px solid black;border-collapse: collapse;padding: 10px;text-align:center");
     row.innerHTML=text;
     return row;
 }
