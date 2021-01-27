@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>  
+        table{
+               margin-left: auto;
+               margin-right: auto;               
+           }
+        td{
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            padding-left: 60px;
+            padding-right: 38px;
+            width: 365px;
+        }
+        .bod{
+            border-right:1px solid black;
+            border-collapse: collapse;
+        }
+        .bac{
+            background-color: gray;
+            text-align:center;
+            margin-left: 200px;
+            margin-right: 200px;
+            width: 1200px;
+            height:275px;
+        }
+        h1{
+            background-color: goldenrod;
+            margin-left: 425px;
+            margin-right: 411px;
+            margin-top: -40px;
+            padding: 10px;
+            font-size: 46px;
+            border-radius: 5px;
+            color: black;
+        }
+        h2{
+            color: gray;
+        }
+        h3{text-align: center;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            color: rgb(48, 45, 45);
+            font-size: 18px;
+            }
+        hr{  
+            width: 80%;
+            margin-bottom: auto;
+            margin-right: 200px;
+            margin-left: 200px;
+            margin-top: auto;    
+        }
+        .pic{
+            height: 150px;
+            width: 150px;
+            border-radius: 80px;
+            border-width: 5px;
+            border-color: goldenrod;
+            border-style: dotted;
+            padding: 2px;
+        }
+        span{
+            height:24px;
+            background-color: gainsboro;
+            display: block;
+            color: goldenrod;
+        }
+        .ico{
+            height: 30px;
+            width: 30px;
+            border-width: 4px;
+            border-color: goldenrod;
+            border-style: dotted;
+            padding: 2px;
+            border-radius: 23px;
+            position: relative;
+            left: -9px;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 155px;
+            height: 5px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            margin-left: 100px;
+        }
+        .slider:hover {
+        opacity: 1; 
+        }
+
+        
+        .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; 
+        appearance: none;
+        width: 16px; 
+        height: 16px;
+        border-radius: 8px; 
+        background: #afa54c; 
+        cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+        width: 25px; 
+        height: 5px; 
+        background: #afa54c; 
+        cursor: pointer; 
+        }  
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        const root= document.createElement("div");
+        document.body.append(root);
+
+        function Head(props){
+            return (
+                <div class="bac">
+                    <Image sr="assets/bat.png" c="pic"/>
+                    <Line />
+                    <Name />
+                </div>
+            );    
+        }
+
+                function Image(props){
+                    return <img src={props.sr} class={props.c} />
+                }
+
+                function Line(){
+                    return <span>this</span>
+                }
+
+                function Name(){
+                    return <h1>PRUDHVI BSS</h1>
+                }
+
+        function Tagline(){
+            return (
+                <div>
+                    <h3>prudhvib460@gmail.com,chicago, 9999 9999 | resume @ | www.kickwatewscx.com</h3>
+                    <hr />
+                </div>
+            );    
+        }
+
+        function Main(props){
+            return (
+                <div>
+                    <table>
+                        <First /> 
+                        <Second />  
+                    </table>    
+                </div>
+            );
+        }
+
+                function First(){
+                    return (
+                        <td class="bod">
+                            <Profile />
+                            <Skills />
+                            <Project />
+                        </td>
+                    );
+                }
+                    function Profile(){
+                        return (
+                            <div>
+                                <h2><Image sr="./assets/user-circle-solid.svg" c="ico"/>Profile</h2>
+                                <p>1+ years of experience in I.T industry with skillset of Front-end development, SFDC, SQL and MSBI.</p>
+                            </div>
+                        );
+                    }
+
+                    function Skills(){
+                        return (
+                            <div>
+                                <h2><Image sr="./assets/flask-solid.svg" c="ico"/>Skills</h2>
+                                <Sktable />
+                            </div>
+                        );
+                    }
+
+                        function Sktable(){
+                            return(
+                                <table>
+                                    <Sk name="Apex" v={70} />
+                                    <Sk name="MSSQL" v={50}/>
+                                    <Sk name="Python" v={90}/>
+                                    <Sk name="Java" v={10}/>
+                                    <Sk name="Azure" v={30}/>
+                                </table>    
+                            );
+                        }
+
+                            function Sk(props){
+                                return (
+                                    <tr>
+                                        <td>{props.name}</td>
+                                        <td>
+                                            <input type='range' min='1' max='100' value={props.v} class='slider' />
+                                        </td>
+                                    </tr>
+                                );
+                            }
+                    
+                    function Project(){
+                        return(
+                            <div>
+                                <h2><Image sr="./assets/briefcase-solid.svg" c="ico"/>Skills</h2>
+                                <div>
+                                    <ul>
+                                        <Listpart head="SALESFORCE DEVELOPER" title="FITBIT INTEGRATION, INFOSYS"/>
+                                        <Listpart head="BI DEVELOPER" title="PMO TRACKER, INFOSYS" />
+                                    </ul>    
+                                </div>
+                            </div>
+                        );
+                    }   
+
+
+                        function Listpart(props){
+                            return (
+                                <li><b>{props.head}</b><br />{props.title}</li>
+                            );
+                        }
+                    
+                    
+                function Second(){
+                    return (<td>
+                    <div>
+                        <h2><Image sr="./assets/briefcase-solid.svg" c="ico"/>Skills</h2>
+                        <div>
+                            <ul>
+                                <Listpart head="ORACLE DEVELOPER" title="E.ON UK SERVICE, INFOSYS"/>
+                            </ul>    
+                        </div>
+                    </div>
+                    <Education />
+                    </td>
+                    );
+                }
+
+                function Education(){
+                    return (
+                        <div>
+                        <h2><Image sr="./assets/graduation-cap-solid.svg" c="ico"/>Education</h2>
+                        <div>
+                            <ul>
+                                <Listpart head="MAY 2019 -- PRESENT" title="INFOSYS, SYSTEMS ENGINEER"/>
+                                <Listpart head="MAY 2018 – JUNE 2018" title="TATA MOTORS, INTERN"/>
+                                <Listpart head="JUNE 2015 – JUNE 2019" title="B.TECH MECHANICAL ENGINEERING"/>
+                            </ul>    
+                        </div>
+                    </div>
+                    );
+                }
+
+        function App(){
+            return(
+                <div>
+                    <Head text="hi" />
+                    <Tagline />
+                    <Main />
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, root);
+    </script>
+</body>
