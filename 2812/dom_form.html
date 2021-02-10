@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <script src="form.js"></script>
+        <div class="container">
+            <form class="form-horizontal" id="details">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">FirstName</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="Enter FirstName" name="firstname">
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">LastName</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="Enter LastName" name="lastname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Address</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="Enter Address" name="address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Pincode</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="Enter Pincode" name="Pincode">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Gender</label>
+                    <div class="col-sm-4">
+                        Male &nbsp<input type="radio" value="Male"  name="gender">&nbsp
+                        Female &nbsp<input type="radio" value="Female"  name="gender">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Choice of food</label>
+                    <div>
+                            <input type="checkbox" class="fd" value="Veggies" id="food1"> Veggies 
+                            <input type="checkbox" class="fd" value="Meat" id="food2"> Meat 
+                            <input type="checkbox" class="fd" value="Burger" id="food3"> Burger 
+                            <input type="checkbox" class="fd" value="Pizza" id="food4"> Pizza 
+                            <input type="checkbox" class="fd" value="Pasta" id="food5"> Pasta 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">State</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="Enter State" name="state">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Country</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="Enter Country" name="country">
+                    </div>
+                </div>
+            </form>
+            <div style="margin-left:350px">
+            <button type="submit" class="btn btn-primary" onclick="checkAll()">Submit</button>
+            <br><br><br><br>
+            </div>
+
+        </div>        
+    </body>
+</html>

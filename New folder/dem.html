@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<!--<script src=dem.js></script>  
+<script src="1012/apicall.js"></script>-->
+<body>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Filters
+  </button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Filters</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div>Diet    
+              <div class="btn-group">
+                <select id="diet">
+                    <option selected="selected">Select an option</option>
+                    <option value="balanced">balanced</option>
+                    <option value="high-protein"> high-protein</option>
+                    <option value="high-fiber" >high-fiber</option>
+                    <option value="low-fat" >low-fat</option>
+                    <option value="low-carb" >low-carb</option>
+                    <option value="low-sodium" >low-sodium</option>
+                </select>    
+              </div>
+           </div> 
+          <div>Cuisine
+            <div class="btn-group">
+              <select id="cuisine">
+                  <option selected="selected">Select an option</option>
+                  <option value="Indian">Indian</option>
+                  <option value="Chinese">Chinese</option>
+              </select>    
+            </div>
+          </div>
+          <div>Meal
+           <div class="btn-group">
+              <select id="meal">
+                <option selected="selected">Select an option</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Snack">Snack</option>
+                <option value="Dinner">Dinner</option>
+              </select>    
+            </div>
+          </div>
+          <div>Dish
+           <select id="dish">
+                <option selected="selected">Select an option</option>
+                <option value="Soup">Soup</option>
+                <option value="Salad">Salad</option>
+                <option value="Sandwich">Sandwich</option>
+            </select>
+          </div>
+          <div>Calories
+                <input type='range' min='1' max='100' value='70' class='slider' >
+          </div> 
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick=getdata()>Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

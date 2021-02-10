@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .block{
+                border:2px solid black;
+                width:400px;
+            }
+        </style>
+        <script>
+        var request = new XMLHttpRequest();
+        request.open('GET','https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json', true)
+        request.send();
+        request.onload = function () {var data = JSON.parse(this.response);
+        var txt = "";
+        var c=1;
+        var s="";
+        for (i in data) {
+            txt += "<div class='block "+c+"'><p>"+ data[i].id + "</p>"+"<p>"+ data[i].name + "</p>"+"<p>"+ data[i].email + "</p></div>";
+            if(parseInt(i)!==0 && parseInt(i)%5===0){
+                c++;
+                }
+            } 
+            var t=document.createElement('div');
+            t.innerHTML=s+txt;
+            document.body.append(t);       
+        
+        for(i=0;i<3;i++){
+                s+="<span><button onclick='disp("+t+")' class='block "+(i+1)+"'>"+(i+1)+"</button></span>";
+            }
+        }
+        function disp(t){
+            //console.log(document.querySelector('.block1').className,document.querySelector('.link1').className);
+            if(document.querySelector(".block 1").className==document.querySelector(".block 1").className){
+                console.log(t);
+                /*var first=document.createElement('div');
+                first.innerHTML=document.querySelectorAll('.block').innerHTML;
+                document.body.append(first);*/
+            }
+        }
+        </script>    
+    </head>
+    <body>    
+    </body>
+</html>

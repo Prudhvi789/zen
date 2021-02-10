@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>    
+<body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>  
+    <script type="text/babel">
+        const root= document.createElement("div");
+        document.body.append(root);
+
+        
+        
+    function Example() {
+        var [count, setCount] = React.useState(0);
+        var [num, setnum]=React.useState(["new"]);
+
+        return (
+            <div>
+                <div id={0}>
+                    <p>You clicked {count} times</p>
+                    <button onClick={() => setCount(count + 1)}>Increment</button>
+                </div>
+                <button onClick={()=> setnum(num.concat(["new"]))}>Add counter</button>
+                {
+                 num.map((item,index)=>{
+                    <div id={index}>     
+                        <p>You clicked {count} times</p>
+                        <button onClick={() => setCount(count + 1)}>Increment</button>
+                    </div>    
+                })   
+                }
+            </div>
+            );
+        }
+
+            
+
+    function App(){
+            return(
+                <div id="app">
+                    <Example />
+                </div>
+            );
+        }
+
+    ReactDOM.render(<App />, root);
+    </script>
+</body>
+</html>
